@@ -1,0 +1,29 @@
+server:
+  port: 5003
+
+# datasoure默认使用JDBC
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.45.161:3306/pass_samples?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: sample1137
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 127.0.0.1:5672
+      password: guest
+      username: guest
+      queue: zipkin
+  storage:
+    type: mysql
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 20   #服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除(默认90秒)
+    lease-renewal-interval-in-seconds: 5       #服务刷新时间配置，每隔这个时间会主动心跳一次(默认30秒)
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+    registry-fetch-interval-seconds: 10  #重新刷新服务地址的时间
