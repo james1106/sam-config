@@ -39,7 +39,7 @@ spring:
     multipart:
       max-file-size: 1000MB
       max-request-size: 1000MB
- boot:
+  boot:
    admin:
      client:
        url: http://127.0.0.1:9000    # 先注释服务器监控不到本地
