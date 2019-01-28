@@ -34,7 +34,7 @@ redis:
     expiration: 3601
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
-  typeAliasesPackage: com.zww.tnt.any.*.model.*
+  typeAliasesPackage: com.samples.pass.*.model.*
 
 #eureka:
 #  instance:
